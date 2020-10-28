@@ -1,0 +1,8 @@
+.env
+*.sqlite3
+venv
+*.jpg
+*.png
+*.jpeg
+*.pyc
+.idea
