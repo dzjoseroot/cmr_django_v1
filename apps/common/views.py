@@ -1,6 +1,6 @@
 from django.shortcuts import render
 from django.views.generic import TemplateView, CreateView
-from django.contrib.auth.views import LoginView 
+from django.contrib.auth.views import LoginView, PasswordChangeView 
 from django.contrib.auth.mixins import LoginRequiredMixin
 from .forms import *
 from django.urls import reverse_lazy
@@ -21,3 +21,8 @@ class SignUpView(CreateView):
 
 class SignInView(LoginView):
     template_name = 'common/login.html'
+
+class ChangePasswordView(PasswordChangeView):
+    template_name = 'common/change-password.html'
+    success_url = reverse_lazy('login')
+    

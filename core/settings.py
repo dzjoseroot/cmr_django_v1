@@ -139,3 +139,6 @@ MEDIA_URL = '/media/'
 
 #LOGIN REDIRECT
 LOGIN_REDIRECT_URL = 'dashboard'
+
+#THIS VILL PRINT EMAIL IN CONSOLE
+EMAIL_BACKEEND = 'django.coer.mail.backends.console.EmailBackend'
