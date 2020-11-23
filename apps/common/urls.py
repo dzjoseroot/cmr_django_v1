@@ -10,7 +10,13 @@ urlpatterns = [
     path('logout/', auth_views.LogoutView.as_view(
         next_page='login'
     ), name='logout'),
-    path('dashboard/', DashboardView.as_view(), name="dashboard"),
-    path('change-password/', ChangePasswordView.as_view(), name="change-password"),
+    path('dashboard/', DashboardView.as_view(), name='dashboard'),
+    path('change-password/', ChangePasswordView.as_view(), name='change-password'),
+    path('password-reset/', PasswordForgotenView.as_view(), name='password-reset'),
+    path('password-reset/done/', PasswordDoneView.as_view(), name='password_reset_done'),
+    path('password-reset/<uidb64>/<token>/', PasswordConfirmResetView.as_view(), name='password_reset_confirm'),
+    path('password-reset-complete/', PasswordCompleteResetView.as_view(), name='password_reset_complete')
+    
+    
     #path('forgot-password', ForgotPassworView.as_view, name="forgot-password")
 ]
